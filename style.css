@@ -1,0 +1,281 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Tahoma", sans-serif;
+    background-image: url('Bliss.jpg'); /* Windows XP background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #000;
+    overflow: hidden;
+}
+
+#desktop {
+    position: relative;
+    height: 100%;
+}
+
+/* Desktop icons */
+.icon {
+    position: absolute;
+    width: 90px;
+    text-align: center;
+    color: black; 
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.icon img {
+    width: 100%;
+    height: auto;
+}
+
+.icon:hover {
+    transform: scale(1.15);
+    color: #ffcc00;
+    border-color: #ffcc00;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Positioning icons like XP */
+#myComputer { top: 50px; left: 50px; }
+#recycleBin { top: 150px; left: 50px; }
+#myDocuments { top: 250px; left: 50px; }
+#internetExplorer { top: 350px; left: 50px; }
+#isoInfo { top: 150px; left: 200px; }
+
+/* Window styles */
+/* Ventanas (sin display: none para pruebas) */
+/* Window styles */
+.window {
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border: 1px solid #7A7A7A;
+    position: absolute;
+    display: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: black; /* Texto negro en la ventana */
+}
+
+/* Encabezado de la ventana */
+.window-header {
+    background-color: #4e8cff; /* Windows XP blue header */
+    color: black; /* Texto negro en el encabezado */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    font-size: 14px;
+}
+
+/* Cuerpo de la ventana */
+.window-body {
+    padding: 15px;
+    font-size: 14px;
+    flex-grow: 1;
+    overflow: auto;
+    color: black; /* Texto negro en el cuerpo */
+}
+
+/* Botones en la ventana */
+.window-buttons button {
+    background: transparent;
+    border: none;
+    color: black; /* Texto negro en los botones */
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.window-buttons button:hover {
+    color: #ff3366;
+}
+
+
+.window-title {
+    font-weight: bold;
+}
+
+.window-buttons {
+    display: flex;
+}
+
+
+/* Window body */
+.window-body {
+    padding: 15px;
+    font-size: 14px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Taskbar */
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to top, #d4d0c8, #a6a6a6); /* XP classic style */
+    border-top: 2px solid #000;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 9999;
+}
+
+.taskbar-icon {
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #d4d0c8;
+    border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.taskbar-icon img {
+    width: 20px; 
+    height: 20px;
+    margin-right: 5px;
+}
+
+.taskbar-icon:hover {
+    background-color: #c0c0c0;
+    transform: scale(1.1);
+}
+
+/* Start button */
+#start-button {
+    background: linear-gradient(to bottom, #4e8cff, #0066cc);
+    border: 2px solid #004080;
+    border-radius: 3px;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#start-button:hover {
+    background: linear-gradient(to bottom, #357ae8, #2e6db5);
+    transform: scale(1.1);
+}
+
+/* Clock styles */
+#clock {
+    margin-left: auto;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 10px;
+    transition: color 0.3s;
+}
+
+#clock:hover {
+    color: #ffcc00;
+}
+
+/* Start menu */
+#start-menu {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    width: 220px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    display: none; 
+    z-index: 1000;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#start-menu.active {
+    display: block;
+    transform: scale(1.05);
+}
+
+.start-menu-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.start-menu-left, .start-menu-right {
+    padding: 10px;
+}
+
+.menu-item {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 5px;
+}
+
+.menu-item:hover {
+    background-color: #d4d0c8;
+    color: #333;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Error and update window */
+#errorWindow, #updateWindow {
+    width: 350px;
+    height: 250px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    display: none; 
+    flex-direction: column;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: opacity 0.5s, transform 0.3s;
+}
+
+#errorWindow.active, #updateWindow.active {
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+}
+
+#errorWindow .window-body, #updateWindow .window-body {
+    padding: 15px;
+}
+
+/* Progress bar */
+#progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+
+#progress {
+    height: 20px;
+    background-color: #4caf50;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Jumpscare background */
+.jumpscare-active {
+    background-image: url('BJ.jpg'); 
+    background-size: cover;
+}

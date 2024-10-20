@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windus 2000 Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <!-- Desktop icons -->
+        <div class="icon" id="myComputer">
+            <span>🖥️ My Computer</span>
+        </div>
+        <div class="icon" id="recycleBin">
+            <span>🗑️ Recycle Bin</span>
+        </div>
+        <div class="icon" id="myDocuments">
+            <span>📁 My Documents</span>
+        </div>
+        <div class="icon" id="internetExplorer">
+            <span>🌐 Internet Explorer</span>
+        </div>
+        <div class="icon" id="isoInfo">
+            <span>📄 .ISO information.exe</span>
+        </div>
+        
+
+        <!-- Windows for each icon -->
+        <div class="window" id="myComputerWindow">
+            <div class="window-header">
+                <span class="window-title">My Computer</span>
+                <span class="window-buttons">
+                    <button class="minimize">_</button>
+                    <button class="maximize">[]</button>
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body">
+                <p>This is the My Computer window! You can browse files and folders here.</p>
+            </div>
+        </div>
+
+        <div class="window" id="recycleBinWindow">
+            <div class="window-header">
+                <span class="window-title">Recycle Bin</span>
+                <span class="window-buttons">
+                    <button class="minimize">_</button>
+                    <button class="maximize">[]</button>
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body">
+                <p>This is the Recycle Bin window! You can view and restore deleted files here.</p>
+            </div>
+        </div>
+
+        <div class="window" id="myDocumentsWindow">
+            <div class="window-header">
+                <span class="window-title">My Documents</span>
+                <span class="window-buttons">
+                    <button class="minimize">_</button>
+                    <button class="maximize">[]</button>
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body">
+                <p>This is the My Documents window! You can access personal files and folders here.</p>
+            </div>
+        </div>
+
+        <div class="window" id="internetExplorerWindow">
+            <div class="window-header">
+                <span class="window-title">Internet Explorer</span>
+                <span class="window-buttons">
+                    <button class="minimize">_</button>
+                    <button class="maximize">[]</button>
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body">
+                <p>This is the Internet Explorer window! Browse the web here.</p>
+            </div>
+        </div>
+
+        <div class="window" id="isoInfoWindow">
+            <div class="window-header">
+                <span class="window-title">.ISO Information</span>
+                <span class="window-buttons">
+                    <button class="minimize">_</button>
+                    <button class="maximize">[]</button>
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body">
+                <p>
+                    Windus 2000 Pro<br><br>
+                    Thank you for downloading the iso at ISOFIREDOWNLOAD.com (This ISO, as seen on the page, contains information and changed files regarding Microsoft Windows)<br><br>
+                    IF YOU HAVE DOWNLOADED A VERSION FROM THE ISOFIREDOWNLOAD.com PAGE BY SKIPPING THE DOWNLOAD OF Morfan.exe IN A FEW MINUTES YOUR WINDUS WILL BE ELIMINATED<br><br>
+                    Distributed by: SejeroDev<br>
+                    Mainly for: Seii_
+                </p>
+            </div>
+        </div>
+
+        <!-- Error window -->
+        <div class="window" id="errorWindow" style="display: none;">
+            <div class="window-header">
+                <span class="window-title">Windows Error</span>
+                <span class="window-buttons">
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body">
+                <p>An error has occurred in Windus 2000 Pro. Restarting the system...</p>
+            </div>
+        </div>
+
+        <!-- Update window -->
+        <div class="window" id="updateWindow" style="display: none;">
+            <div class="window-header">
+                <span class="window-title">Installing updates...</span>
+                <span class="window-buttons">
+                    <button class="close">X</button>
+                </span>
+            </div>
+            <div class="window-body" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <p>Updating the system... <span id="update-progress">0%</span> completed.</p>
+                <div id="progress-bar" style="width: 100%; background-color: #f3f3f3; border: 1px solid #000;">
+                    <div id="progress" style="width: 0%; height: 20px; background-color: #4caf50;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taskbar without title -->
+        <div id="taskbar">
+            <button id="start-button">Start</button>
+            <div id="taskbar-icons">
+                <!-- Icons will appear here dynamically -->
+            </div>
+            <div id="clock"></div>
+        </div>
+
+        <!-- Start menu -->
+        <div id="start-menu" class="hidden">
+            <div class="start-menu-inner">
+                <div class="start-menu-left">
+                    <div class="menu-item">Programs</div>
+                    <div class="menu-item">Documents</div>
+                    <div class="menu-item">Settings</div>
+                    <div class="menu-item">Search</div>
+                    <div class="menu-item">Help</div>
+                    <div class="menu-item">Run...</div>
+                    <div class="menu-item">Control Panel</div>
+                    <div class="menu-item">Task Manager</div>
+                    <div class="menu-item">Network Connections</div>
+                </div>
+                <div class="start-menu-right">
+                    <div class="user-info">
+                        <span> User</span>
+                    </div>
+                    <div class="menu-item">Log Off</div>
+                    <div class="menu-item">Shut Down</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="jumpscare-audio" src="jumpscare.mp3" preload="auto"></audio>
+    <audio id="bsod-audio" src="BSOD.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
